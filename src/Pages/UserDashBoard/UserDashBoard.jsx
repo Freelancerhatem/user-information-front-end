@@ -48,52 +48,103 @@ const UserDashBoard = () => {
                                     <h2>Street Address</h2>
                                     <textarea name="stAddress" className="resize-none w-[calc(50%-10px)] bg-gray-200 rounded p-4 text-black  focus:outline-none" id="" ></textarea>
                                 </div>
-                                
+
                                 <div className="space-x-2">
                                     <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Save Changes</button>
                                     <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Cancel</button>
                                 </div>
                             </div>
                         </div>
-                        :
-                        <div>
-                        <h2 className="text-xl font-bold">Personal Information</h2>
-                        <div className=" w-full grid grid-cols-2 gap-5">
-
-                            <div className="flex flex-col ">
-                                <h2>Select Your Country</h2>
-                                <select defaultValue={'usa'} className=" bg-gray-200 rounded p-4 text-black  focus:outline-none" name="country" id="">
-                                    <option value="usa">USA</option>
-                                    <option value="bd">Bangladesh</option>
-                                    <option value="ind">India</option>
-                                    <option value="uae">UAE</option>
-                                    <option value="uk">UK</option>
-                                </select>
-                            </div>
-                            <div className="flex flex-col ">
-                                <h2>Select Your State</h2>
-                                <select defaultValue={'newYork'} className="bg-gray-200 rounded p-4 text-black  focus:outline-none" name="country" id="">
-                                    <option value="newYork">New York</option>
-                                    <option value="california">California</option>
-                                    <option value="">Alaska</option>
-                                    <option value="uae">UAE</option>
-                                    <option value="uk">UK</option>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div className="">
+                        : active == 'passport' ?
                             <div>
-                                <h2>Street Address</h2>
-                                <textarea name="stAddress" className="resize-none w-[calc(50%-10px)] bg-gray-200 rounded p-4 text-black  focus:outline-none" id="" ></textarea>
+                                <h2 className="text-xl font-bold">Personal Information</h2>
+                                <div className=" w-full grid grid-cols-2 gap-5">
+
+
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Passport Front</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Passport Back</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+
+                                </div>
+                                <div className="grid grid-cols-2 gap-5 ">
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">NID Front</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">NID Back</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+                                </div>
+
+                                <div className="space-x-2 mt-5">
+                                    <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Save Changes</button>
+                                    <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Cancel</button>
+                                </div>
+
                             </div>
-                            
-                            <div className="space-x-2">
-                                <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Save Changes</button>
-                                <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Cancel</button>
+                            :
+                            <div>
+                                <h2 className="text-xl font-bold">Others Information</h2>
+                                <div className=" w-full grid grid-cols-2 gap-5">
+
+
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Mock  Video 1</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Mock Video 2</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+
+                                </div>
+                                <div className="grid grid-cols-2 gap-5 ">
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Security Question?</label>
+                                        
+                                        <select name="" id="" className="bg-gray-200 rounded p-4 text-black  focus:outline-none">
+                                            <option value="">Your Favorite Team?</option>
+                                            <option value="">What is Your Grandmother Name?</option>
+                                            <option value="">What is Your Born Year?</option>
+                                        </select>
+                                    </div>
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">Answer:</label>
+                                        <input type="text" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+                                </div>
+                                <div className="grid grid-cols-2 gap-5 ">
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">NID Front</label>
+                                        <input type="text" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+                                    <div className="mt-5 flex flex-col">
+                                        <label htmlFor="">NID Back</label>
+                                        <input type="file" className="bg-gray-200 rounded p-4 text-black  focus:outline-none" />
+                                    </div>
+
+                                </div>
+
+                                <div className="space-x-2 mt-5">
+                                    <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Save Changes</button>
+                                    <button className="px-4 py-2 bg-red-500 rounded-lg text-white">Cancel</button>
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
                 }
 
 
