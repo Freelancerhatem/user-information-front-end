@@ -10,7 +10,7 @@ const UserDashBoard = () => {
                 <div className="radial-progress text-primary" style={{ "--value": 70 }} role="progressbar">70%</div>
             </div>
             <div className="flex justify-center gap-20  mt-12">
-                <h2 onClick={() => setActive('address')} className={`border-b-2 cursor-pointer px-2  ${active == 'address' ? 'border-red-500' : 'border-red-100'}`}>Address</h2>
+                <h2 onClick={() => setActive('address')} className={`border-b-2 cursor-pointer px-2    ${active == 'address' ? 'border-red-500' : 'border-red-100'}`}>Address</h2>
                 <h2 onClick={() => setActive('passport')} className={`border-b-2 cursor-pointer px-2  ${active == 'passport' ? 'border-red-500' : 'border-red-100'}`}>Passport/Id</h2>
                 <h2 onClick={() => setActive('others')} className={`border-b-2 cursor-pointer px-2  ${active == 'others' ? 'border-red-500' : 'border-red-100'}`}>Others</h2>
             </div>
