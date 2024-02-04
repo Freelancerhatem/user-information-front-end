@@ -57,9 +57,9 @@ const UserDetails = () => {
                         {
                             seeAll ?
                                 <div className="flex flex-col  text-center">
-                                    <span className="text-base text-red-500 text-center font-semibold flex items-center gap-1"><MdMarkEmailRead/>{email}</span>
-                                    <span className="text-base text-red-500 text-center font-semibold flex items-center gap-1"><FaAddressCard/>{address}</span>
-                                    <span className="text-base text-red-500 text-center font-semibold flex items-center gap-1"><FaPhoneVolume/>{phone}</span>
+                                    <span className="text-base text-[#39a2e1] text-center font-semibold flex items-center gap-1"><MdMarkEmailRead/>{email}</span>
+                                    <span className="text-base text-[#39a2e1] text-center font-semibold flex items-center gap-1"><FaAddressCard/>{address}</span>
+                                    <span className="text-base text-[#39a2e1] text-center font-semibold flex items-center gap-1"><FaPhoneVolume/>{phone}</span>
                                 </div>
                                 :
                                 ''
@@ -69,7 +69,7 @@ const UserDetails = () => {
                         {
                             !seeAll ?
                                 <div className="flex mt-4 md:mt-6">
-                                    <button disabled={status == 'pending' || status == 'approved' ? true : false} onClick={handleAdmin} className={`${loginUserEmail==email? 'hidden':''} flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg     disabled:bg-slate-300 disabled:text-white `}>Request to Admin<MdAdminPanelSettings /></button>
+                                    <button disabled={status == 'pending' || status == 'approved' ? true : false} onClick={handleAdmin} className={`${loginUserEmail==email? 'hidden':''} flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#39a2e1] rounded-lg     disabled:bg-slate-300 disabled:text-white `}>Request to Admin<MdAdminPanelSettings /></button>
                                     <button onClick={() => setSeeAll(true)} disabled={status == 'approved' || loginUserEmail==email ? false : true} className={`inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 disabled:bg-slate-300 disabled:text-white ms-3`}>See Details</button>
                                 </div>
                                 :

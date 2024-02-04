@@ -63,7 +63,7 @@ const Banner = () => {
                 <form className='flex items-center  ' action="" onSubmit={handleSearch}>
 
                     <input name='search' type="text" required placeholder="Type here" className="input  focus:outline-none input-bordered input-error w-full max-w-xs" />
-                    <button type="submit" className="btn ml-2 text-white bg-red-500 border-none hover:bg-red-400">Search<FaSearch /></button>
+                    <button type="submit" className="btn ml-2 text-white bg-[#39a2e1] border-none hover:bg-[#49b1f2]">Search<FaSearch /></button>
 
                 </form>
 
@@ -81,7 +81,7 @@ const Banner = () => {
                                 <h1>                                    
                                     {
                                         userData.userType == 'normal'?
-                                            <Link to={`/details/${_id}`}><button className='btn btn-sm bg-red-500 text-white hover:bg-red-400 mt-2 border-none'>See Details<MdKeyboardDoubleArrowRight /></button></Link>
+                                            <Link to={`/details/${_id}`}><button className='btn btn-sm bg-[#39a2e1] text-white hover:bg-[#39a2e1] mt-2 border-none'>See Details<MdKeyboardDoubleArrowRight /></button></Link>
                                             : ''
                                     }
                                 </h1>

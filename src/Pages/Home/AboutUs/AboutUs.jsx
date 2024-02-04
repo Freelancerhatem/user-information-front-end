@@ -6,7 +6,7 @@ const AboutUs = () => {
     const [counterOn, setCounterOn] = useState(false);
     console.log(counterOn)
     return (
-        <div name={'about'}  className="h-screen bg-red-300 ">
+        <div name={'about'}  className="h-screen bg-white ">
             
                 <h2 className='text-3xl text-center pt-5'>About us</h2>
 
