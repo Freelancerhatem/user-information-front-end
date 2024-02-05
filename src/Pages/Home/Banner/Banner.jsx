@@ -55,15 +55,15 @@ const Banner = () => {
     const { name, image, email, address, phone, userType, _id } = searchData || '';
 
     return (
-        <div className='h-[calc(100vh-80px)] mt-20  bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg})` }}>
-        <div className={`flex flex-col gap-6  ${seeData? 'bg-black bg-opacity-50 inset-0 h-[calc(100vh-80px)]':''}` }>
+        <div className='h-[calc(100vh-80px)] mt-5 max-w-7xl mx-auto rounded-xl  bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg})` }}>
+        <div className={`flex flex-col gap-6   ${seeData? 'bg-black bg-opacity-50 inset-0 h-[calc(100vh-80px)]':''}` }>
             <Toaster />
             <div className=" w-1/2  mt-32   flex  justify-center items-center mx-auto">
 
                 <form className='flex items-center  ' action="" onSubmit={handleSearch}>
 
-                    <input name='search' type="text" required placeholder="Type here" className="input  focus:outline-none input-bordered input-error w-full max-w-xs" />
-                    <button type="submit" className="btn ml-2 text-white bg-[#39a2e1] border-none hover:bg-[#49b1f2]">Search<FaSearch /></button>
+                    <input name='search' type="text" required placeholder="Type here" className="input  focus:outline-none border-none  w-full max-w-xs" />
+                    <button type="submit" className="btn ml-2 text-white bg-[#fe5d1d] border-none hover:bg-[#f69e7b]">Search<FaSearch /></button>
 
                 </form>
 

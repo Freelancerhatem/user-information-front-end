@@ -115,7 +115,7 @@ const Signup = () => {
 
     return (
         <div>
-            <div className="h-[calc(100vh-80px)] mt-20 bg-center bg-cover" style={{ backgroundImage: bg }} >
+            <div className="h-[calc(100vh-80px)]  bg-center bg-cover" style={{ backgroundImage: bg }} >
                 <div className="container mx-auto py-8">
                     <h1 className="text-2xl font-bold mb-6 text-center text-black">Registration Form</h1>
                     <form onSubmit={handleSubmit(handleCreateUser)} className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">

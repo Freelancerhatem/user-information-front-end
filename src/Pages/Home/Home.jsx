@@ -7,17 +7,19 @@ import Partners from "./Partners/Partners";
 
 
 const Home = () => {
-   
+
 
     return (
-       <div>
-        <Banner></Banner>
-        <AboutUs></AboutUs>
-        <Partners></Partners>
-        <HappyClients></HappyClients>
-        <Contact></Contact>
-        <Footer></Footer>
-       </div>
+        <div>
+            <div className="">
+                <Banner></Banner>
+            </div>
+            <AboutUs></AboutUs>
+            <Partners></Partners>
+            <HappyClients></HappyClients>
+            <Contact></Contact>
+            <Footer></Footer>
+        </div>
     );
 };
 
