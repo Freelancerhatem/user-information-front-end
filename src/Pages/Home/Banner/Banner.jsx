@@ -55,7 +55,7 @@ const Banner = () => {
     const { name, image, email, address, phone, userType, _id } = searchData || '';
 
     return (
-        <div className='h-[calc(100vh-80px)] mt-5 max-w-7xl mx-auto rounded-xl  bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg})` }}>
+        <div className='h-[calc(100vh-80px)] mt-4 max-w-7xl mx-auto rounded-xl  bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${bg})` }}>
         <div className={`flex flex-col gap-6   ${seeData? 'bg-black bg-opacity-50 inset-0 h-[calc(100vh-80px)]':''}` }>
             <Toaster />
             <div className=" w-1/2  mt-32   flex  justify-center items-center mx-auto">

@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import PartnerImages from "../../../Components/PartnerImages/PartnerImages";
+import PartnerImagesBelow from "../../../Components/PartnerImages/PartnerImagesBelow";
 
 const Partners = () => {
     return (
@@ -10,7 +11,7 @@ const Partners = () => {
                 <PartnerImages></PartnerImages>
             </Marquee>
             <Marquee pauseOnHover gradient direction="right">
-                <PartnerImages></PartnerImages>
+                <PartnerImagesBelow></PartnerImagesBelow>
             </Marquee>
             
         </div>

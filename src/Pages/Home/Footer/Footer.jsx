@@ -2,49 +2,61 @@
 
 const Footer = () => {
     return (
-        <footer className="footer h-screen grid-rows-2 p-10 bg-white text-black">
-            <nav>
-                <header className="footer-title">Services</header>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-                <header className="footer-title">Company</header>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-                <header className="footer-title">Legal</header>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
-            </nav>
-            <nav>
-                <header className="footer-title">Social</header>
-                <a className="link link-hover">Twitter</a>
-                <a className="link link-hover">Instagram</a>
-                <a className="link link-hover">Facebook</a>
-                <a className="link link-hover">Github</a>
-            </nav>
-            <nav>
-                <header className="footer-title">Explore</header>
-                <a className="link link-hover">Features</a>
-                <a className="link link-hover">Enterprise</a>
-                <a className="link link-hover">Security</a>
-                <a className="link link-hover">Pricing</a>
-            </nav>
-            <nav>
-                <header className="footer-title">Apps</header>
-                <a className="link link-hover">Mac</a>
-                <a className="link link-hover">Windows</a>
-                <a className="link link-hover">iPhone</a>
-                <a className="link link-hover">Android</a>
-            </nav>
-        </footer>
+        <div>
+            <div className="px-10  bg-black h-[calc(100vh-420px)] text-white  grid grid-cols-4">
+                <div className=" pt-5 flex flex-col gap-5">
+                    <h1 className="text-xl font-semibold">Get in Touch</h1>
+                    <div className="space-y-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, vel.</p>
+                        <p>Gmail</p>
+                        <p>Number</p>
+                    </div>
+                </div>
+                <div className=" flex items-start justify-center pt-5 ">
+                    <nav className="flex flex-col justify-center">
+                        <h2 className="text-xl font-semibold">Company</h2>
+                        <ul className="flex flex-col justify-center gap-2 mt-20">
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className=" flex items-start justify-center pt-5 ">
+                    <nav className="flex flex-col justify-center">
+                        <h2 className="text-xl font-semibold">Services</h2>
+                        <ul className="flex flex-col justify-center gap-2 mt-20">
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className=" flex items-start justify-center pt-5 ">
+                    <nav className="flex flex-col justify-center">
+                        <h2 className="text-xl font-semibold">Company</h2>
+                        <ul className="flex flex-col justify-center gap-2 mt-20">
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                            <li>About Us</li>
+                            <li>Our Office</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div className="h-10 bg-gray-200 flex items-center justify-center">
+                <p className="">copyright usernest.com 2023-2024 </p>
+            </div>
+        </div>
     );
 };
 

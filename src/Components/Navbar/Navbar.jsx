@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { FaRightFromBracket } from "react-icons/fa6";
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logoor.png'
 import { Link as ScrollLink } from 'react-scroll'
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
     const [uid, setuid] = useState([]);
     const { userId } = uid;
     const { photoURL, displayName } = user || '';
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
    
     const handleLogout = e => {
         e.preventDefault();
@@ -52,7 +52,7 @@ const Navbar = () => {
 
     return (
         <div className='h-20'>
-            <div className={`h-8 fixed w-screen z-[60] bg-[#f69e7b] ${active? 'translate-y-0 duration-500':'-translate-y-10 duration-500'}`}>
+            <div className={`h-8 fixed w-screen z-[60] bg-[#fe5d1d] text-black font-bold  ${active? 'translate-y-0 duration-500':'-translate-y-10 duration-500'}`}>
                 <marquee direction="left"><p className="">Here will be published important notice Here will be published important notice Here will be published important notice</p></marquee>
             </div>
             <div className={` h-14  top-0 fixed w-screen z-50 ${active ? 'translate-y-8 duration-500' :'translate-y-0 duration-300'}  bg-white bg-opacity-75 backdrop-blur-lg px-14 grid grid-cols-2 items-center justify-center  `}>
@@ -71,8 +71,8 @@ const Navbar = () => {
                             className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#fe5d1d] font-bold " : ""}> <li>Dashboard</li> </NavLink> : ''
                     }
-                    <ScrollLink to="about" duration={500} spy={true} smooth={true} onSetActive={() => setActiveAbout(true)} onSetInactive={() => setActiveAbout(false)} className={`cursor-pointer`}>About</ScrollLink>
-                    <ScrollLink to="contact" duration={500} spy={true} smooth={true} onSetActive={() => setActiveLink(true)} onSetInactive={() => setActiveLink(false)} className={`cursor-pointer `}>Contact us</ScrollLink>
+                    <ScrollLink to="about" duration={500} spy={true} smooth={true}   className={`cursor-pointer`}>About</ScrollLink>
+                    <ScrollLink to="contact" duration={500} spy={true} smooth={true}   className={`cursor-pointer `}>Contact us</ScrollLink>
 
 
                     {!user ? <>
