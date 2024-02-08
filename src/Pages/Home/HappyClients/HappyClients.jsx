@@ -14,10 +14,8 @@ import '@smastrom/react-rating/style.css'
 const HappyClients = () => {
 
     return (
-        <div className="h-screen">
-
-            <h1 className='text-center text-3xl font-extrabold z-10'>Happy Clients</h1>
-            <div className=" mx-auto w-[50%] mt-20 bg-slate-100 px-10 py-5">
+        <div className="">
+            <div className=" mx-auto w-[50%]  bg-slate-100 px-10 ">
                 <Swiper loop={true} navigation={true} modules={[Navigation]} className="">
                     <SwiperSlide>
                     <div className=''>

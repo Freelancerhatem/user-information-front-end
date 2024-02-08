@@ -11,17 +11,17 @@ import img10 from '../../assets/partner/a- (10).png'
 
 const PartnerImages = () => {
     return (
-        <div className='flex gap-4'>
-            <img className='w-32' src={img1} alt="" />
-            <img className='w-32' src={img2} alt="" />
-            <img className='w-32' src={img3} alt="" />
-            <img className='w-32' src={img4} alt="" />
-            <img className='w-32' src={img5} alt="" />
-            <img className='w-32' src={img6} alt="" />
-            <img className='w-32' src={img7} alt="" />
-            <img className='w-32' src={img8} alt="" />
-            <img className='w-32' src={img9} alt="" />
-            <img className='w-32' src={img10} alt="" />
+        <div className='flex gap-32'>
+            <img className='w-20' src={img1} alt="" />
+            <img className='w-20' src={img2} alt="" />
+            <img className='w-20' src={img3} alt="" />
+            <img className='w-20' src={img4} alt="" />
+            <img className='w-20' src={img5} alt="" />
+            <img className='w-20' src={img6} alt="" />
+            <img className='w-20' src={img7} alt="" />
+            <img className='w-20' src={img8} alt="" />
+            <img className='w-20' src={img9} alt="" />
+            <img className='w-20' src={img10} alt="" />
             
         </div>
     );
