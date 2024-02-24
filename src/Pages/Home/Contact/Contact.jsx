@@ -3,10 +3,12 @@ import { RiHomeOfficeLine } from "react-icons/ri";
 import { MdCall } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
+import useAos from '../../../Hooks/useAos/useAos';
 
 const Contact = () => {
+    useAos()
     return (
-        <div name='contact' className=" h-[70vh] bg-cover  bg-center    " style={{ backgroundImage: `url(${bgimg})` }}>
+        <div name='contact' data-aos='fade-up'  className=" h-[70vh] bg-cover  bg-center    " style={{ backgroundImage: `url(${bgimg})` }}>
             <div className=''>
                 <div className='grid grid-cols-2 pt-5'>
 

@@ -6,6 +6,7 @@ import Signup from "../Pages/Signup/Signup";
 import DashBoard from "../DashBoard/DashBoard";
 import Home from "../Pages/Home/Home";
 import UserDashBoard from "../Pages/UserDashBoard/UserDashBoard";
+import Search from "../Pages/Search/Search";
 
 
 
@@ -23,6 +24,14 @@ import UserDashBoard from "../Pages/UserDashBoard/UserDashBoard";
               element: <Signin></Signin>
             },
             {
+              path: 'signup',
+              element: <Signup></Signup>
+            },
+            {
+              path: 'search',
+              element: <Search></Search>
+            },
+            {
               path: 'details/:id',
               element: <UserDetails></UserDetails>
             },
@@ -34,10 +43,7 @@ import UserDashBoard from "../Pages/UserDashBoard/UserDashBoard";
               path:'/user/dashboard',
               element:<UserDashBoard></UserDashBoard>
             },
-            {
-              path: 'signup',
-              element: <Signup></Signup>
-            },
+            
           ]
         },
       ]);

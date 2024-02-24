@@ -8,17 +8,17 @@ import img7 from '../../assets/partner/p8.png'
 
 
 const PartnerImagesBelow = () => {
+    const images = [img1, img2, img3, img4, img4, img5, img5, img6, img7]
     return (
         <div className='flex gap-32'>
-            <img className='w-20' src={img1} alt="" />
-            <img className='w-20' src={img2} alt="" />
-            <img className='w-20' src={img3} alt="" />
-            <img className='w-20' src={img4} alt="" />
-            <img className='w-20' src={img5} alt="" />
-            <img className='w-20' src={img6} alt="" />
-            <img className='w-20' src={img7} alt="" />
-            
-            
+
+
+            {
+                images.map((image,index)=><img key={index} className='w-20' src={image} alt="" />)
+            }
+
+
+
         </div>
     );
 };

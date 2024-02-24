@@ -6,14 +6,16 @@ import NumberCount from '../../../Components/NumberCount/NumberCount';
 import img1 from '../../../assets/img/abt1.avif'
 import img2 from '../../../assets/img/abt2.jpg'
 import img3 from '../../../assets/img/abt3.jpg'
+import useAos from '../../../Hooks/useAos/useAos';
 const AboutUs = () => {
+    useAos()
     const [counterOn, setCounterOn] = useState(false);
     const [onEnter, setEnter] = useState(false);
     const [onEnter2, setEnter2] = useState(false);
     const [onEnter3, setEnter3] = useState(false);
-    console.log(counterOn)
+    
     return (
-        <div name={'about'} className="h-screen py-10  ">
+        <div name={'about'}  className="h-screen mt-20  ">
 
             <h2 className='text-3xl text-center pt-5'>About us</h2>
 
@@ -39,14 +41,14 @@ const AboutUs = () => {
                 </div>
             </ScrollTrigger >
 
-            <div className='    grid grid-cols-3 gap-5 py-5 px-10  h-full' >
+            <div data-aos='fade-up' className='grid grid-cols-3 gap-5 py-5 px-10  h-full' >
 
                 <div className={`h-[70%] shadow-xl relative grid grid-rows-2 rounded-xl`} onMouseEnter={() => setEnter(true)} onMouseLeave={() => setEnter(false)}>
                     <div className={`absolute left-0 bottom-0 bg-gradient-to-t  from-[#ff672b] via-25% via-[#ff672b] to-[#00000000]  w-full  rounded-xl ${onEnter ? 'h-full transition-all duration-500' : 'h-0 transition-all duration-500'}`}></div>
                     <div>
                         <img src={img1} className='rounded-t-xl h-full w-full' alt="" />
                     </div>
-                    <div className={`z-20 px-5 py-3 ${onEnter ? 'text-white translate-y-10 transition-all duration-100' : 'transition-all duration-100'}`}>
+                    <div className={`z-20 px-5 py-3 ${onEnter ? 'text-white  translate-y-10 transition-all duration-100' : 'transition-all duration-100'}`}>
                         <h1 className={`text-2xl font-bold ${onEnter ? '' : ''}`}>Our Mission</h1>
                         <p className={`mt-5${onEnter ? '' : ''}`}>At the heart of our mission is a commitment to providing users with not just a secure vault, but a seamlessly integrated hub where they can effortlessly organize, update, and access their personal data.</p>
                     </div>

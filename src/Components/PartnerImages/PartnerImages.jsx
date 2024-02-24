@@ -10,19 +10,16 @@ import img9 from '../../assets/partner/a- (9).png'
 import img10 from '../../assets/partner/a- (10).png'
 
 const PartnerImages = () => {
+    const images = [img1, img2, img3,img4, img5, img6, img7, img8, img9, img10]
     return (
         <div className='flex gap-32'>
-            <img className='w-20' src={img1} alt="" />
-            <img className='w-20' src={img2} alt="" />
-            <img className='w-20' src={img3} alt="" />
-            <img className='w-20' src={img4} alt="" />
-            <img className='w-20' src={img5} alt="" />
-            <img className='w-20' src={img6} alt="" />
-            <img className='w-20' src={img7} alt="" />
-            <img className='w-20' src={img8} alt="" />
-            <img className='w-20' src={img9} alt="" />
-            <img className='w-20' src={img10} alt="" />
-            
+            {
+                images.map((image, index) => {
+                   return <img className='w-20' key={index} src={image} alt="" />
+                })
+            }
+
+
         </div>
     );
 };

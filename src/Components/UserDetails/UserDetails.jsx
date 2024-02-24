@@ -24,14 +24,14 @@ const UserDetails = () => {
             .then((res) => setdetailsData(res.data))
     }, [axiosLoader, id])
 
-    // console.log(detailsData);
+    
 
 
     const handleAdmin = e => {
         e.preventDefault();
         axiosLoader.patch(`/requestForData/${id}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.modifiedCount == 1) {
                     toast.success('Successfully requested to admin');
                     axiosLoader.get(`/details/${id}`)
@@ -40,7 +40,7 @@ const UserDetails = () => {
             })
     }
     const { name, image, email, address, phone, userType, status } = detailsData || '';
-    // console.log(detailsData)
+    
     return (
         <div className=" h-[80vh]  flex items-center justify-center  ">
             <Toaster></Toaster>

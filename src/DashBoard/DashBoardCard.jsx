@@ -14,7 +14,7 @@ const DashBoardCard = ({ pendingDatas }) => {
         
         axiosLoader.patch(`/AdminApprove/${_id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount == 1) {
                     axiosLoader.get(`/details/${_id}`)
                         .then((res) => setdetailsData(res.data))

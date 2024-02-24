@@ -11,11 +11,12 @@ import { Navigation } from 'swiper/modules';
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
+import useAos from '../../../Hooks/useAos/useAos';
 const HappyClients = () => {
-
+useAos()
     return (
-        <div className="">
-            <div className=" mx-auto w-[50%]  bg-slate-100 px-10 ">
+        <div data-aos='fade-up' className="rounded-md w-[calc(100vw-120px)] mx-auto py-5  bg-gray-50">
+            <div className=" mx-auto w-[50%]   px-10  ">
                 <Swiper loop={true} navigation={true} modules={[Navigation]} className="">
                     <SwiperSlide>
                     <div className=''>

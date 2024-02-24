@@ -1,3 +1,4 @@
+
 import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
 import Contact from "./Contact/Contact";
@@ -11,9 +12,8 @@ const Home = () => {
 
     return (
         <div>
-            <div className="">
-                <Banner></Banner>
-            </div>
+            
+            <Banner></Banner>
             <AboutUs></AboutUs>
             <Partners></Partners>
             <HappyClients></HappyClients>
