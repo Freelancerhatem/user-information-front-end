@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import { MdVerified } from "react-icons/md";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { MdLockPerson } from "react-icons/md";
 import { useContext, useEffect, useRef, useState } from "react";
 import anim from '../../assets/animation/search.json';
 import errorAnimation from '../../assets/animation/nofound.json'
@@ -12,15 +13,23 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import img from '../../assets/bg_1.jpg'
 import useAos from "../../Hooks/useAos/useAos";
+import useAxios from "../../Hooks/useAxios/useAxios";
 const Search = () => {
     const [searchData, setsearchData] = useState({});
     const [hide, setHide] = useState(false);
     const [error, setError] = useState(false);
-    const { user } = useAuth();
-    const [userData] = useInfoUser();
-    const ref = useRef();
-    useAos();
+    const [access, setAccess] = useState({});
 
+    // login user info in db
+    const [userData] = useInfoUser();
+    // login user info in firebase
+    const { user } = useAuth();
+    const ref = useRef();
+    const axiosLoader = useAxios();
+    useAos();
+    
+    const { name, image, email, address, phone, userType, _id, userId } = searchData || '';
+    
     const handleSearch = () => {
         const searchValue = ref.current.value;
 
@@ -28,10 +37,9 @@ const Search = () => {
         if (Object.keys(searchData).length > 0 && searchData.userId == searchValue) {
             toast.error('already found')
         }
-        // alert(Object.keys(searchData))
         else {
 
-            axios.get(`https://ueserinfo-react-backend.vercel.app/search/${searchValue}`)
+            axiosLoader.get(`/search/${searchValue}`)
                 .then(res => {
                     setsearchData(res.data);
                     if (Object.keys(res.data).length == 0) {
@@ -40,10 +48,11 @@ const Search = () => {
                         toast.error('invalid user id,user not found')
                     }
                     else {
-
-
                         setHide(true)
-                        toast.success('user found')
+                        toast.success('user found');
+
+                        
+                         
                     }
                 })
                 .catch(err => console.log(err.message))
@@ -54,8 +63,26 @@ const Search = () => {
 
 
     };
-    const { name, image, email, address, phone, userType, _id } = searchData || '';
 
+    if(Object.keys(searchData).length >0){
+       
+        axiosLoader.get(`/api/v1/userAccess?user=${userData.userId}&client=${userId}`)
+        
+    }
+    
+
+
+
+
+
+    /** to do
+      1.check the user id is exist in db yes or 
+      2.if yes enable the button 
+      3. create a variable access in this page
+      4. user must need login for see full search data.
+      5.
+    
+     */
 
     return (
         <div className="h-screen w-screen" style={{ backgroundImage: `url(${img})` }}>
@@ -98,7 +125,7 @@ const Search = () => {
                                         </div>
 
                                     </div>
-                                    <Link to={`/user/${_id}`} className='flex justify-center'><button className="flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full hover:bg-[#4878ca]  py-2 bg-[#335da5] font-semibold text-center">Visit Profile<FaArrowAltCircleRight /></button></Link>
+                                    <Link disabled={userType == 'verified' ? false : true} to={`/details/${_id}`} className='flex justify-center bg-green-300 w-36 mx-auto'><button className="flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full hover:bg-[#4878ca]  py-2 bg-[#335da5] font-semibold text-center">Visit Profile {userType == 'verified' ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -106,11 +133,11 @@ const Search = () => {
                     :
                     <div className="w-[40%] mx-auto border">
                         {error ?
-                           <div className="w-[95%]">
+                            <div className="w-[95%]">
                                 <h1 className="text-center text-2xl font-bold">No Data Found</h1>
-                               <Lottie className="w-full" animationData={errorAnimation} loop={true} autoplay />
-                           </div>
-                            
+                                <Lottie className="w-full" animationData={errorAnimation} loop={true} autoplay />
+                            </div>
+
                             :
                             <Lottie animationData={anim} loop={true} autoplay />
                         }

@@ -18,16 +18,8 @@ const NavBarCopy = () => {
     const [active] = useScroll();
     const [menuBar, setMenuBar] = useState(true);
     const [search, setSearch] = useState(true);
-    const { user, logOut } = useContext(AuthContext) || '';
-    const [uid, setuid] = useState([]);
-    const { userId } = uid;
+    const { user, logOut } = useContext(AuthContext) || '';    
     const { photoURL, displayName } = user || '';
-
-
-    useEffect(() => {
-        axios.get(`https://ueserinfo-react-backend.vercel.app/uid?email=${user?.email}`)
-            .then((res) => setuid(res.data))
-    }, [user?.email]);
 
 
 
@@ -57,8 +49,9 @@ const NavBarCopy = () => {
                     </nav>
                 </div>
                 <div className={`col-span-1  flex items-center justify-end gap-4`}>
-                    <Link to={'/signin'}><button className="px-6 py-2  bg-white text-black">Login</button></Link>
+                    {!user&&<Link to={'/signin'}><button className="px-6 py-2  bg-white text-black">Login</button></Link>}
                     <Link to={'/search'}><button  className="  text-white text-2xl"><IoSearchSharp /></button></Link>
+                    {user&& <button onClick={()=>logOut()} className="btn">logout</button>}
                 </div>
 
                 {!search &&
