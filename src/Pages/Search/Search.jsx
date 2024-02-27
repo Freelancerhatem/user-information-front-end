@@ -18,8 +18,9 @@ const Search = () => {
     const [searchData, setsearchData] = useState({});
     const [hide, setHide] = useState(false);
     const [error, setError] = useState(false);
-    const [access, setAccess] = useState({});
-
+    const [access, setAccess] = useState('');
+    const [findAccessClientId, setClientID] = useState('');
+    const[searchValue,setSearchvalue]=useState('')
     // login user info in db
     const [userData] = useInfoUser();
     // login user info in firebase
@@ -27,12 +28,14 @@ const Search = () => {
     const ref = useRef();
     const axiosLoader = useAxios();
     useAos();
-    
-    const { name, image, email, address, phone, userType, _id, userId } = searchData || '';
-    
-    const handleSearch = () => {
-        const searchValue = ref.current.value;
 
+    const { name, image, email, address, phone, userType, _id, userId } = searchData || '';
+
+    const handleSearch = () => {
+        // cleared previous access data
+        setAccess('')
+        const searchValue = ref.current.value;
+        setSearchvalue(searchValue)
 
         if (Object.keys(searchData).length > 0 && searchData.userId == searchValue) {
             toast.error('already found')
@@ -51,8 +54,8 @@ const Search = () => {
                         setHide(true)
                         toast.success('user found');
 
-                        
-                         
+
+
                     }
                 })
                 .catch(err => console.log(err.message))
@@ -64,23 +67,29 @@ const Search = () => {
 
     };
 
-    if(Object.keys(searchData).length >0){
-       
-        axiosLoader.get(`/api/v1/userAccess?user=${userData.userId}&client=${userId}`)
+
+    
+    useEffect(() => {
         
-    }
+        axiosLoader.get(`/api/v1/userAccess?user=${userData?.userId}&client=${userId}`)
+            .then(res => setAccess(res.data));
+            
+    }, [axiosLoader,userData?.userId,userId]);
+    
+    console.log(access);
     
 
 
 
 
 
+
+
+
     /** to do
-      1.check the user id is exist in db yes or 
-      2.if yes enable the button 
-      3. create a variable access in this page
-      4. user must need login for see full search data.
-      5.
+      1.sent login user id+seeking user id as query
+      2.check in login user db the seeking id available or not
+      3.if available sent a response true
     
      */
 
@@ -125,7 +134,7 @@ const Search = () => {
                                         </div>
 
                                     </div>
-                                    <Link disabled={userType == 'verified' ? false : true} to={`/details/${_id}`} className='flex justify-center bg-green-300 w-36 mx-auto'><button className="flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full hover:bg-[#4878ca]  py-2 bg-[#335da5] font-semibold text-center">Visit Profile {userType == 'verified' ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
+                                    <Link  to={`/details/${_id}`} className='flex justify-center bg-green-300 w-36 rounded-full mx-auto'><button disabled={access === true ? false : true} className="flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full w-full hover:bg-[#4878ca]  py-2 bg-[#335da5] font-semibold text-center">Visit Profile {userType == 'verified' ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
                                 </div>
                             </div>
                         </div>
