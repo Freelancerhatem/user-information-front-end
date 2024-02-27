@@ -23,7 +23,7 @@ const DashBoardCard = ({ pendingDatas }) => {
             })
     }
     return (
-        <div>
+        <div>hello
             <div className='flex gap-4 justify-center items-center border'>
                 <h1>{name}</h1>
                 <h1>{status}</h1>

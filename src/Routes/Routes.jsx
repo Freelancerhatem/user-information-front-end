@@ -7,6 +7,7 @@ import DashBoard from "../DashBoard/DashBoard";
 import Home from "../Pages/Home/Home";
 import UserDashBoard from "../Pages/UserDashBoard/UserDashBoard";
 import Search from "../Pages/Search/Search";
+import AdminDashBoard from "../Pages/AdminDashBoard/AdminDashBoard";
 
 
 
@@ -42,6 +43,10 @@ import Search from "../Pages/Search/Search";
             {
               path:'/user/dashboard',
               element:<UserDashBoard></UserDashBoard>
+            },
+            {
+              path:'/admin/dashboard',
+              element:<AdminDashBoard></AdminDashBoard>
             },
             
           ]

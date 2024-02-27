@@ -7,7 +7,7 @@ import NavBarCopy from "../Components/Navbar/NavBarCopy";
 const HomeLayout = () => {
 
     const { pathname } = useLocation();
-    const navbar = pathname.includes('signin') || pathname.includes('signup') ||pathname.includes('search');
+    const navbar = pathname.includes('signin') || pathname.includes('signup') ||pathname.includes('search')||pathname.includes('dashboard');
 
     return (
         <div>

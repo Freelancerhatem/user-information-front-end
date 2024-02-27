@@ -14,13 +14,16 @@ import { Link } from "react-router-dom";
 import img from '../../assets/bg_1.jpg'
 import useAos from "../../Hooks/useAos/useAos";
 import useAxios from "../../Hooks/useAxios/useAxios";
+import { HiDotsHorizontal } from "react-icons/hi";
 const Search = () => {
     const [searchData, setsearchData] = useState({});
     const [hide, setHide] = useState(false);
     const [error, setError] = useState(false);
     const [access, setAccess] = useState('');
     const [findAccessClientId, setClientID] = useState('');
-    const[searchValue,setSearchvalue]=useState('')
+    const [sideBar, setSideBar] = useState(false);
+    const[status,setStatus] = useState('normal')
+
     // login user info in db
     const [userData] = useInfoUser();
     // login user info in firebase
@@ -33,9 +36,10 @@ const Search = () => {
 
     const handleSearch = () => {
         // cleared previous access data
-        setAccess('')
+        // setAccess('');
+
         const searchValue = ref.current.value;
-        setSearchvalue(searchValue)
+
 
         if (Object.keys(searchData).length > 0 && searchData.userId == searchValue) {
             toast.error('already found')
@@ -68,19 +72,35 @@ const Search = () => {
     };
 
 
-    
+
     useEffect(() => {
-        
+
         axiosLoader.get(`/api/v1/userAccess?user=${userData?.userId}&client=${userId}`)
             .then(res => setAccess(res.data));
-            
-    }, [axiosLoader,userData?.userId,userId]);
-    
-    console.log(access);
-    
+
+    }, [axiosLoader, userData?.userId, userId]);
+
+    // console.log(access);
 
 
 
+    // send user access request to admin
+    const handleRequsetAccessToAdmin = () => {
+        axiosLoader.post(`/api/v1/accessRequest?requestUser=${userData?.userId}&forUser=${userId}`)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast.success('sent request for access')
+                    console.log(res.data)
+                }
+                else{
+                    console.log(res.data)
+                    toast.error(res.data.status);
+                    setStatus(res.data.status)
+                }
+
+            })
+
+    }
 
 
 
@@ -106,7 +126,7 @@ const Search = () => {
                 hide ?
 
 
-                    <div className="w-[30%] h-[50%] mx-auto mt-20 ">
+                    <div className="w-[30%] h-[50%] mx-auto mt-20 relative">
                         <div data-aos-duration='700' data-aos='fade-up' className='relative'>
                             <div className={`  bg-white  -z-0 py-5 rounded-md shadow-2xl `}>
 
@@ -134,7 +154,20 @@ const Search = () => {
                                         </div>
 
                                     </div>
-                                    <Link  to={`/details/${_id}`} className='flex justify-center bg-green-300 w-36 rounded-full mx-auto'><button disabled={access === true ? false : true} className="flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full w-full hover:bg-[#4878ca]  py-2 bg-[#335da5] font-semibold text-center">Visit Profile {userType == 'verified' ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
+                                    <Link to={`/details/${_id}`} className='flex justify-center  w-44 rounded-full mx-auto'><button disabled={access === true ? false : true} className={`flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full w-full  ${access ? 'hover:bg-[#4878ca]  bg-[#335da5]' : 'bg-gray-500'}  py-2 font-semibold text-center`}>{access ? 'Visit Profile' : 'Need Access'} {access == true ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
+                                    {access != true ?
+                                        <div className="absolute w-44 h-20  -top-8 right-0">
+                                            <button onClick={() => setSideBar(!sideBar)} className="btn absolute right-0 bg-transparent border-none text-gray-600 text-3xl shadow-none hover:bg-transparent"><HiDotsHorizontal /></button>
+
+                                        </div>
+                                        : ''
+                                    }
+
+                                    <button onClick={() => handleRequsetAccessToAdmin()} className={`bg-gray-200  shadow-xl rounded-lg absolute top-2 right-0  ${sideBar ? 'w-44 h-10' : ' hidden'}`}>
+                                        {status=='normal'?'Access Request':'Pending'}
+                                    </button>
+
+
                                 </div>
                             </div>
                         </div>
