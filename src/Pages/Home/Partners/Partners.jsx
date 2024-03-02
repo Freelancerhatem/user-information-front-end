@@ -4,8 +4,8 @@ import PartnerImagesBelow from "../../../Components/PartnerImages/PartnerImagesB
 
 const Partners = () => {
     return (
-        <div className="h-[340px] flex flex-col justify-center">
-            <h1 className="text-3xl font-extrabold text-center py-2">Our Clients</h1>
+        <div className="md:h-[340px]  w-screen  md:px-10 flex flex-col justify-center  md:mt-0">
+            <h1 className="md:text-3xl text-xl md:font-extrabold font-bold text-center py-2">Our Clients</h1>
             
             <Marquee pauseOnHover gradient>
                 <PartnerImages></PartnerImages>

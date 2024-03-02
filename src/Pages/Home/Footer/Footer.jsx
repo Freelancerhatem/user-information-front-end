@@ -9,7 +9,7 @@ import { MdCopyright } from "react-icons/md";
 const Footer = () => {
     
     return (
-        <div className="md:h-[50vh] bg-black">
+        <div className="md:h-[50vh] w-screen bg-black">
             <div className="grid grid-cols-1 md:grid-cols-4 md:h-[40vh]  px-10 py-5">
                 <div className="text-white">
                     <h1 className="lg:text-2xl text-xl font-bold text-white">Connect with us</h1>

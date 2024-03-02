@@ -12,10 +12,10 @@ import img10 from '../../assets/partner/a- (10).png'
 const PartnerImages = () => {
     const images = [img1, img2, img3,img4, img5, img6, img7, img8, img9, img10]
     return (
-        <div className='flex gap-32'>
+        <div className='flex md:gap-32 gap-5'>
             {
                 images.map((image, index) => {
-                   return <img className='w-20' key={index} src={image} alt="" />
+                   return <img className='w-10 md:w-20' key={index} src={image} alt="" />
                 })
             }
 

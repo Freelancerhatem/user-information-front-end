@@ -89,9 +89,9 @@ const Signin = () => {
 
             <div className="h-screen w-screen flex items-center  bg-center bg-cover bg-no-repeat" style={{ backgroundImage: bg }}  >
                 <Link to={'/'}><button className="btn absolute top-2 right-2"><RxCross2 /></button></Link>
-                <div className=" w-[60%] h-[70%] grid grid-cols-2 gap-4 justify-between  mx-auto rounded-xl  shadow-2xl">
+                <div className=" md:w-[60%] md:h-[70%] grid md:grid-cols-2 grid-cols-1 gap-4 justify-between  mx-auto rounded-xl  md:shadow-2xl px-5 md:px-0">
 
-                    <div className="w-[80%] pl-10 mt-20">
+                    <div className="md:w-[80%] md:pl-10 mt-20">
                         <form onSubmit={handleLogin} className="  w-full ">
                             <div>
                                 <h1 className="text-center text-xl font-bold pt-5">Hello!</h1>
@@ -125,7 +125,7 @@ const Signin = () => {
 
                         </form>
                     </div>
-                    <div className="flex flex-col justify-center items-center bg-[#f69e7b] rounded-tr-xl  rounded-br-xl">
+                    <div className="hidden md:flex flex-col justify-center items-center bg-[#f69e7b] rounded-tr-xl  rounded-br-xl">
                         <h1 className="text-xl font-semibold">Welcome Back!</h1>
                         <div>
                             <Lottie animationData={signin} loop={true} autoplay />

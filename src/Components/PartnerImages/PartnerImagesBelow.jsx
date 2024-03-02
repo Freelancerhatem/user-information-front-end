@@ -10,11 +10,11 @@ import img7 from '../../assets/partner/p8.png'
 const PartnerImagesBelow = () => {
     const images = [img1, img2, img3, img4, img4, img5, img5, img6, img7]
     return (
-        <div className='flex gap-32'>
+        <div className='flex md:gap-32 gap-5'>
 
 
             {
-                images.map((image,index)=><img key={index} className='w-20' src={image} alt="" />)
+                images.map((image,index)=><img key={index} className='w-10 md:w-20' src={image} alt="" />)
             }
 
 

@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "name":"James Kim",
+        "img":"https://preview.keenthemes.com/metronic-v4/theme/assets/pages/img/avatars/team7.jpg",
+        "rating":4.8,
+        "message":"userNest is an invaluable resource for anyone who values their time. As a parent juggling work and family responsibilities, I appreciate the ease with which I can access essential information on this site. Whether I'm researching local services or looking for quick tips, Antripe consistently delivers reliable results, making my daily tasks a breeze."
+    },
+    {
+        "id":2,
+        "name":"Twinkle Shin",
+        "img":"https://i.pinimg.com/736x/a4/2a/94/a42a94b71efd8fa64e4be5996ab990a7.jpg",
+        "rating":4.8,
+        "message":"userNest is an invaluable resource for anyone who values their time. As a parent juggling work and family responsibilities, I appreciate the ease with which I can access essential information on this site. Whether I'm researching local services or looking for quick tips, Antripe consistently delivers reliable results, making my daily tasks a breeze."
+    },
+    {
+        "id":3,
+        "name":"Zara Donald",
+        "img":"https://miocoral.com/wp-content/uploads/2019/10/big.jpg",
+        "rating":4.8,
+        "message":"userNest is an invaluable resource for anyone who values their time. As a parent juggling work and family responsibilities, I appreciate the ease with which I can access essential information on this site. Whether I'm researching local services or looking for quick tips, Antripe consistently delivers reliable results, making my daily tasks a breeze."
+    },
+    {
+        "id":4,
+        "name":"Zefar Umaiza",
+        "img":"https://www.electricallicenserenewal.com/app-assets/images/user/12.jpg",
+        "rating":4.8,
+        "message":"userNest is an invaluable resource for anyone who values their time. As a parent juggling work and family responsibilities, I appreciate the ease with which I can access essential information on this site. Whether I'm researching local services or looking for quick tips, Antripe consistently delivers reliable results, making my daily tasks a breeze."
+    },
+    {
+        "id":5,
+        "name":"Donald Tray",
+        "img":"https://blog.kingland.com/hubfs/leadership-2022/Leadership_Matt-Good.jpg",
+        "rating":4,
+        "message":"userNest is an invaluable resource for anyone who values their time. As a parent juggling work and family responsibilities, I appreciate the ease with which I can access essential information on this site. Whether I'm researching local services or looking for quick tips, Antripe consistently delivers reliable results, making my daily tasks a breeze."
+    }
+]

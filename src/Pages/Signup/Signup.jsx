@@ -126,11 +126,11 @@ const Signup = () => {
     return (
         <div>
             <div className="h-screen  bg-center bg-cover" style={{ backgroundImage: bg }} >
-                <Link to={'/'}><button className="btn absolute top-2 right-2"><RxCross2/></button></Link>
-                <div className="h-screen w-screen flex items-center  bg-center bg-cover bg-no-repeat" style={{ backgroundImage: bg }}  >
-                    <div className=" w-[60%] h-[90%] grid grid-cols-2 gap-4 justify-between  mx-auto rounded-xl  shadow-2xl">
+                <Link to={'/'}><button className="btn absolute top-2 md:right-2 right-3"><RxCross2/></button></Link>
+                <div className="h-screen w-screen flex items-center  bg-center bg-cover bg-no-repeat px-5 md:px-0" style={{ backgroundImage: bg }}  >
+                    <div className=" md:w-[60%] md:h-[90%] grid md:grid-cols-2 grid-cols-1  gap-4 justify-between  mx-auto rounded-xl  md:shadow-2xl">
 
-                        <div className="w-[80%] pl-10 mt-4">
+                        <div className="md:w-[80%] md:pl-10 mt-4">
                             <form onSubmit={handleSubmit(handleCreateUser)} className="  w-full ">
                                 <div>
                                     <h1 className="text-center text-xl font-bold pt-5">Hello!</h1>
@@ -184,7 +184,7 @@ const Signup = () => {
 
                             </form>
                         </div>
-                        <div className="flex flex-col justify-center items-center bg-[#f69e7b]  rounded-tr-xl rounded-br-xl">
+                        <div className="hidden md:flex flex-col justify-center items-center bg-[#f69e7b]  rounded-tr-xl rounded-br-xl">
                             <h1 className="text-xl font-semibold">Welcome!</h1>
                             <div>
                                 <Lottie animationData={signin} loop={true} autoplay />

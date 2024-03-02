@@ -107,9 +107,8 @@ const Search = () => {
 
 
     /** to do
-      1.sent login user id+seeking user id as query
-      2.check in login user db the seeking id available or not
-      3.if available sent a response true
+      1.add access request id to the request generated peoples db.
+      2.Jokhon kono user admin ke access request dibe tokon jodi admin seta approve kore dey tahole
     
      */
 
@@ -154,7 +153,7 @@ const Search = () => {
                                         </div>
 
                                     </div>
-                                    <Link to={`/details/${_id}`} className='flex justify-center  w-44 rounded-full mx-auto'><button disabled={access === true ? false : true} className={`flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full w-full  ${access ? 'hover:bg-[#4878ca]  bg-[#335da5]' : 'bg-gray-500'}  py-2 font-semibold text-center`}>{access ? 'Visit Profile' : 'Need Access'} {access == true ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
+                                    <Link to={`/details/${_id}`} className='flex justify-center  w-44 rounded-full mx-auto'><button disabled={access == true ? false : true} className={`flex  justify-center items-center gap-2 text-base px-4 text-white rounded-full w-full  ${access ? 'hover:bg-[#4878ca]  bg-[#335da5]' : 'bg-gray-500'}  py-2 font-semibold text-center`}>{access ? 'Visit Profile' : 'Need Access'} {access == true ? <FaArrowAltCircleRight /> : <MdLockPerson></MdLockPerson>}</button></Link>
                                     {access != true ?
                                         <div className="absolute w-44 h-20  -top-8 right-0">
                                             <button onClick={() => setSideBar(!sideBar)} className="btn absolute right-0 bg-transparent border-none text-gray-600 text-3xl shadow-none hover:bg-transparent"><HiDotsHorizontal /></button>
@@ -163,7 +162,7 @@ const Search = () => {
                                         : ''
                                     }
 
-                                    <button onClick={() => handleRequsetAccessToAdmin()} className={`bg-gray-200  shadow-xl rounded-lg absolute top-2 right-0  ${sideBar ? 'w-44 h-10' : ' hidden'}`}>
+                                    <button disabled={status!=='normal'? true:false} onClick={() => handleRequsetAccessToAdmin()} className={`bg-gray-200  shadow-xl rounded-lg absolute top-2 right-0  ${sideBar ? 'w-44 h-10' : ' hidden'}`}>
                                         {status=='normal'?'Access Request':'Pending'}
                                     </button>
 
